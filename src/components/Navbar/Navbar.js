@@ -5,16 +5,17 @@ import styles from './Navbar.module.css';
 
 const Navbar = () => {
   return (
-    <div className={`${styles.navbar} sm:h-16 lg:h-20 rounded-xl m-1 p-2`}>
+    <div className={`${styles.navbar} sm:h-16 lg:h-24 rounded-xl m-2`}>
       <div className={`${styles.logo}`}>
-        Pixel Planner
+      <img src="/logo.png" alt="logo" className={styles.logo_img}/>
+      <span>Pixel Planner</span>
       </div>
-      <div className="flex gap-6">
+      <div className={styles.linksdiv}>
         <Link href="../home" className={styles.links}>Home</Link>
-        <Link href="../create" className={styles.links}>Create</Link>
+        <Link href="../create" className={styles.links}>Create ✨</Link>
         <Link href="../dashboard" className={styles.links}>PlannerHub</Link>
         {/* temp for login button */}
-        <h3>Login</h3>
+        <h3 className={styles.auth}>Login</h3>
       </div>
     </div>
   );
