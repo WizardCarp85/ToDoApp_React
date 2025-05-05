@@ -1,1 +1,9 @@
-@import "tailwindcss";
+.navbar{
+    color: #ffffff;
+    background-color: #333333;
+}
+.logo{
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #00aaff;
+}
