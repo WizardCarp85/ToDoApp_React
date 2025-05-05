@@ -3,7 +3,7 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div className="login mt-40 ">
+    <div className="login mt-35 ">
       <h1 className="text-5xl font-bold text-center mt-12">Welcome Back 👋</h1>
       <form className="flex flex-col items-center mt-10 gap-1">
         <div className="relative w-1/4 mb-4">
@@ -32,7 +32,7 @@ const Login = () => {
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white rounded-lg p-2 w-1/4 text-2xl loginsubmit"
+          className="signupsubmit bg-blue-500 text-white rounded-lg p-2 w-1/4 text-2xl"
         >
           Login
         </button>

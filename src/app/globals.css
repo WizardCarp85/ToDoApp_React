@@ -18,7 +18,22 @@ body{
   justify-content: center;
   color: rgb(0, 166, 255);
 }
-.loginsubmit{
+.loginsubmit, .signupsubmit{
   cursor: pointer;
   font-weight: 500;
+  transition: all 0.4s ease;
+}
+.loginsubmit:hover, .signupsubmit:hover{
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+.loginsubmit:active, .signupsubmit:active{
+  transition: all 0.4s ease;
+  box-shadow: inset 0px 0px 5px #000000;
+}
+.signup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(0, 166, 255);
 }
