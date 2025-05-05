@@ -3,8 +3,18 @@
 *{
   font-family: 'baloo 2', cursive;
 }
+
 body{
   min-height: 100vh;
   margin: 0;
   background: linear-gradient(90deg, #0f0f0f, #1a1a1a, #0f0f0f);
+}
+
+
+/* login page */
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(0, 166, 255);
 }
