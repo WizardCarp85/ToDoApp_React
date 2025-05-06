@@ -11,15 +11,18 @@ const Home = () => {
 
   return (
     <div className="flex flex-col text-white justify-center items-center">
+
+      {/* Heading */}
       <div
-        className="heading text-7xl text-sky-200 font-bold mt-90 mb-30"
+        className="heading text-7xl text-sky-200 font-bold mt-80 mb-40"
         data-aos="fade-up"
       >
         <h1>🎮 Welcome to Pixel Planner!</h1>
       </div>
 
+{/* Main Section */}
       <div
-        className="info mt-60 mb-20 text-3xl text-center text-gray-300 flex flex-col gap-16"
+        className="info mt-60 mb-20 mr-60 ml-60 text-3xl text-center text-gray-300 flex flex-col gap-16"
         data-aos="fade-up"
       >
         <h3>
@@ -35,6 +38,7 @@ const Home = () => {
         <h3>🗡️🛡️ Let’s slay that to-do list, hero. Adventure awaits!</h3>
       </div>
 
+{/* Redirecting Button */}
       <div
         className="start bg-[#004aad] hover:bg-[#007acc] text-white text-2xl font-semibold border-2 border-cyan-400 rounded-2xl px-10 py-4 mt-40 mb-60 shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
         data-aos="zoom-in"
@@ -44,6 +48,7 @@ const Home = () => {
         </h1>
       </div>
 
+{/* Extra info */}
       <h1
         className="text-5xl text-sky-400 font-bold"
         data-aos="fade-up"
@@ -59,6 +64,7 @@ const Home = () => {
         </ul>
       </div>
 
+{/* Reviews */}
       <div
         className="reviews bg-gray-800 p-8 rounded-lg shadow-lg text-center text-white mb-20 mt-50"
         data-aos="fade-up"
@@ -76,6 +82,7 @@ const Home = () => {
         </div>
       </div>
 
+{/* Community Section */}
       <div
         className="community bg-[#004aad] p-8 rounded-lg shadow-lg text-center text-white mb-20 mt-20"
         data-aos="zoom-in"
@@ -87,7 +94,7 @@ const Home = () => {
           Connect with other heroes, share your progress, and stay updated!
         </p>
         <div className="mt-6">
-          <button className="bg-[#007acc] hover:bg-[#0066b3] px-6 py-3 rounded-xl text-white text-lg font-semibold transition duration-300">
+          <button className="community bg-[#007acc] hover:bg-[#0066b3] px-6 py-3 rounded-xl text-white text-lg font-semibold transition duration-300">
             Join Now
           </button>
         </div>

@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+import ShowButton from "@/components/ShowButton/ShowButton";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,6 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Navbar/>
+        <ShowButton/>
             {children}
       </body>
     </html>

@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link href="../home">
           <img src="/logo.png" alt="logo" className={styles.logo_img} />
           </Link>
-          <Link href="../home">
+          <Link href="/">
           <span>Pixel Planner</span>
         </Link>
       </div>
