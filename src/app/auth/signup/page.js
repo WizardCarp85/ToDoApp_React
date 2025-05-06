@@ -1,9 +1,15 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import React, { useEffect } from "react";
 
 const SignUp = () => {
+    useEffect(() => {
+      AOS.init({ duration: 1200, once: false });
+    }, []);
   return (
-    <div className="signup mt-35 ">
+    <div className="signup mt-35 " data-aos="fade-up">
       <h1 className="signup text-5xl font-bold text-center mt-12">Join Pixel Planner Today 🚀</h1>
       <form className="flex flex-col items-center mt-10 gap-1">
         <div className="relative w-1/4 mb-4">
