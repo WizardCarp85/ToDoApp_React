@@ -2,8 +2,11 @@ import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 
 export const metadata = {
-  title: "Pixel Planner",
-  description: "Your ultimate planning tool",
+  title: "Pixel Planner 🚀",
+  description: "Your daily quest begins here!",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
