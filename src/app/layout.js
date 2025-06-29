@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Pixel Planner 🚀",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
           <div className="h-[86px] md:h-24 bg-[#141414] rounded-b-lg"></div>
           <Navbar />
           {children}
+          <Footer/>
         </div>
       </body>
     </html>

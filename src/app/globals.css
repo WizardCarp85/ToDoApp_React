@@ -12,6 +12,8 @@ html,body{
   color-scheme: dark;
 }
 
-
-
+.footer{
+  background: #2e2e2e;
+background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(59, 59, 59, 1) 29%, rgba(110, 110, 110, 1) 100%);
+}
 
