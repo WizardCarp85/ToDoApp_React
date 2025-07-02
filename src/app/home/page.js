@@ -17,7 +17,7 @@ const Home = () => {
         data-aos="fade-up"
       >
         <h1 className="heading-text text-3xl md:text-[2.5rem] font-semibold md:font-bold text-[#e2e2e2] font-['Playfair_Display']">
-          What's Pixel Planner?
+          What&apos;s Pixel Planner?
         </h1>
       </div>
       {/* info */}
