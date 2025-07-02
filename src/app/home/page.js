@@ -13,46 +13,39 @@ const Home = () => {
     <div>
       {/* heading */}
       <div
-        className="heading flex items-center justify-center my-[10em] md:my-[22em]"
+        className="heading flex items-center justify-center mt-[6em] mb-[2em] md:mt-[12em] md:mb-[5em] tracking-wide"
         data-aos="fade-up"
       >
-        <h1 className="text-3xl md:text-6xl font-semibold md:font-bold text-[#B7E6FE]">
-          🎮 Welcome to Pixel Planner!
+        <h1 className="heading-text text-3xl md:text-[2.5rem] font-semibold md:font-bold text-[#e2e2e2] font-['Playfair_Display']">
+          What's Pixel Planner?
         </h1>
       </div>
       {/* info */}
       <div
-        className="info flex flex-col items-center justify-center text-[#D1D5DB] mx-[3em] text-center gap-10 mb-[4em] text-lg md:text-3xl md:mx-[10em] md:gap-28"
+        className="info flex flex-col items-center justify-center text-[#D1D5DB] mx-[3em] text-center gap-8 mb-[8em] text-md md:text-lg md:mx-[20em] md:gap-12"
         data-aos="fade-up"
       >
-        <p>
-          ✨ Your ultimate quest to conquer chaos begins here. 🧠 Whether you’re
-          battling deadlines or navigating daily dungeons, Pixel Planner is your
-          loyal sidekick.
+        <p className="info-text">
+          Your journey to conquer chaos starts now. Whether you're managing
+          deadlines or organizing your day, Pixel Planner is your smart and
+          reliable sidekick 🛠️.
         </p>
-        <p>
-          ⚔️ Craft your perfect day, equip tasks like gear, and level up your
-          productivity! 🎯 From epic goals to daily quests — plan it all, your
-          way.
+        <p className="info-text">
+          Plan your perfect day, structure tasks like essential tools ⚙️, and
+          take control of your productivity. From long-term goals to daily
+          priorities — organize it all, your way ✅.
         </p>
-        <p>🗡️🛡️ Let’s slay that to-do list, hero. Adventure awaits!</p>
-      </div>
-      {/* redirect button */}
-      <div
-        className="redirect bg-[#004aad] hover:bg-[#007acc] border-2 border-cyan-400 rounded-xl my-[10em] mx-[6em] md:mx-[24em] md:py-3 px-4 py-2 text-center md:text-2xl font-semibold hover:scale-105"
-        data-aos="zoom-in-up"
-      >
-        <h1>
-          <Link href="/create">Start Conquering Chaos 🚀</Link>
-        </h1>
+        <p className="info-text">
+          Let’s simplify your workflow and unlock your full potential 🚀.
+        </p>
       </div>
       {/* extrainfo */}
       <div className="extrainfo" data-aos="fade-up">
-        <h1 className="text-2xl md:text-5xl text-center md:mb-20 text-sky-400 font-bold">
+        <h1 className="text-2xl md:text-4xl text-center md:mb-20 text-sky-500 font-bold font-['Playfair_Display']">
           ⚙️ Level Up With These Perks
         </h1>
-        <div className="my-12 mx-8 text-lg md:text-2xl text-center">
-          <ul className="space-y-5 md:space-y-10">
+        <div className="my-12 mx-8 text-md md:text-lg text-center">
+          <ul className="space-y-3 md:space-y-5">
             <li>📅 Plan your missions.</li>
             <li>🎯 Complete your goals like a true champion.</li>
             <li>⚡ Stay on top of deadlines and conquer tasks.</li>
@@ -60,22 +53,31 @@ const Home = () => {
           </ul>
         </div>
       </div>
+      {/* redirect button */}
+      <div
+        className="redirect bg-[#004aad] hover:bg-[#007acc] border-2 border-cyan-400 rounded-xl my-[8em] mx-[6em] md:mx-[28em] md:py-3 px-3 py-2 text-center text-sm md:text-xl font-semibold hover:scale-105"
+        data-aos="zoom-in-up"
+      >
+        <h1>
+          <Link href="/create">Start Conquering Chaos 🚀</Link>
+        </h1>
+      </div>
       {/* reviews */}
       <div
         className="reviews bg-gray-800 py-4 px-4 md:px-8 rounded-lg shadow-lg text-center text-white mt-20 mx-12 mb-20 md:mx-[24em] md:my-[8em] "
         data-aos="zoom-in"
       >
-        <h2 className="text-xl md:text-3xl font-semibold">
+        <h2 className="text-md md:text-2xl font-semibold">
           What Our Users Say
         </h2>
         <div className="mt-6 space-y-8">
           <div className="flex flex-col items-center">
-            <p className="text-md md:text-xl italic">
+            <p className="text-xs md:text-lg italic">
               &quot;Pixel Planner has transformed the way I organize my day.
-              It’s like having a personal sidekick!
+              It’s like having a personal sidekick!&quot;
             </p>
-            <h4 className="mt-2 text-xl font-semibold">WizardCarp</h4>
-            <p className="text-md text-gray-400">Software Engineer</p>
+            <h4 className="mt-2 text-md font-semibold">WizardCarp</h4>
+            <p className="text-xs text-gray-400">Software Engineer</p>
           </div>
         </div>
       </div>
@@ -84,14 +86,14 @@ const Home = () => {
         className="community bg-[#004aad] p-6 rounded-lg shadow-lg text-center text-white mb-20 mt-20 mx-12 md:mx-[24em]"
         data-aos="zoom-in"
       >
-        <h2 className="text-xl md:text-3xl font-semibold">
+        <h2 className="text-md md:text-2xl font-semibold">
           Join the Pixel Planner Community
         </h2>
-        <p className="text-sm md:text-xl mt-4">
+        <p className="text-xs md:text-lg mt-4">
           Connect with other heroes, share your progress, and stay updated!
         </p>
         <div className="mt-6">
-          <button className="community bg-[#007acc] hover:bg-[#0066b3] px-4 py-2 md:px-6 md:py-3 rounded-xl text-white text-md md:text-xl font-semibold transition duration-300">
+          <button className="community bg-[#007acc] hover:bg-[#0066b3] px-4 py-2 md:px-6 md:py-3 rounded-xl text-white text-sm md:text-md font-semibold transition duration-300">
             Join Now
           </button>
         </div>

@@ -14,18 +14,19 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
       </head>
-      <body>
-        <div className="relative">
-          <div className="h-[86px] md:h-24 bg-[#141414] rounded-b-lg"></div>
+      <body className="min-h-screen flex flex-col">
+          <div className="h-[70px] md:h-24 bg-[#141414] rounded-b-lg"></div>
           <Navbar />
-          {children}
+          <main className="flex-grow">
+            {children}
+          </main>
           <Footer/>
-        </div>
       </body>
     </html>
   );

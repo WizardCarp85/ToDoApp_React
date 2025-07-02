@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-*{
-  font-family: 'Baloo 2', cursive;
-}
-
-html,body{
+html,
+body {
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
   margin: 0;
   background: #000;
@@ -12,8 +10,19 @@ html,body{
   color-scheme: dark;
 }
 
-.footer{
+.footer {
   background: #2e2e2e;
-background: linear-gradient(90deg, rgba(46, 46, 46, 1) 0%, rgba(59, 59, 59, 1) 29%, rgba(110, 110, 110, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(46, 46, 46, 1) 0%,
+    rgba(59, 59, 59, 1) 29%,
+    rgba(110, 110, 110, 1) 100%
+  );
 }
 
+.logo-text,
+.heading-text {
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
