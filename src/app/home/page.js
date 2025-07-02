@@ -26,7 +26,7 @@ const Home = () => {
         data-aos="fade-up"
       >
         <p className="info-text">
-          Your journey to conquer chaos starts now. Whether you're managing
+          Your journey to conquer chaos starts now. Whether you&apos;re managing
           deadlines or organizing your day, Pixel Planner is your smart and
           reliable sidekick 🛠️.
         </p>
@@ -36,7 +36,7 @@ const Home = () => {
           priorities — organize it all, your way ✅.
         </p>
         <p className="info-text">
-          Let’s simplify your workflow and unlock your full potential 🚀.
+          Let&apos;s simplify your workflow and unlock your full potential 🚀.
         </p>
       </div>
       {/* extrainfo */}
@@ -74,7 +74,7 @@ const Home = () => {
           <div className="flex flex-col items-center">
             <p className="text-xs md:text-lg italic">
               &quot;Pixel Planner has transformed the way I organize my day.
-              It’s like having a personal sidekick!&quot;
+              It&apos;s like having a personal sidekick!&quot;
             </p>
             <h4 className="mt-2 text-md font-semibold">WizardCarp</h4>
             <p className="text-xs text-gray-400">Software Engineer</p>
