@@ -54,14 +54,15 @@ const Home = () => {
         </div>
       </div>
       {/* redirect button */}
-      <div
-        className="redirect bg-[#004aad] hover:bg-[#007acc] border-2 border-cyan-400 rounded-xl my-[8em] mx-[6em] md:mx-[28em] md:py-3 px-3 py-2 text-center text-sm md:text-xl font-semibold hover:scale-105"
-        data-aos="zoom-in-up"
-      >
-        <h1>
-          <Link href="/create">Start Conquering Chaos 🚀</Link>
-        </h1>
-      </div>
+<div
+  className="redirect bg-[#004aad] hover:bg-[#007acc] border-2 border-cyan-400 rounded-xl py-2 px-3 md:px-8 md:py-3 text-center text-sm md:text-xl font-semibold hover:scale-105 mx-auto my-20 w-fit"
+  data-aos="zoom-in-up"
+>
+  <h1>
+    <Link href="/create">Start Conquering Chaos 🚀</Link>
+  </h1>
+</div>
+
       {/* reviews */}
       <div
         className="reviews bg-gray-800 py-4 px-4 md:px-8 rounded-lg shadow-lg text-center text-white mt-20 mx-12 mb-20 md:mx-[24em] md:my-[8em] "
