@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-row justify-around tracking-wide">
       {/* Logo */}
-      <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-24 pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848]">
+      <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-24 pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848] shadow-sm shadow-[#424242]">
         <Link
           href="/"
           className="flex items-center gap-2 font-semibold scale-[0.9]"
@@ -41,10 +41,10 @@ const Navbar = () => {
             href="/dashboard"
             className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
           >
-            Dashboard
+            PlannerHub
           </Link>
           <Link
-            href="/login"
+            href="/auth/sign-up"
             className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200"
           >
             Login
@@ -78,11 +78,11 @@ const Navbar = () => {
             </li>
             <li className="">
               <Link href="/dashboard" onClick={() => setMenuOpen(false)}>
-                <i className="fa-solid fa-chart-simple mr-3"></i>Dashboard
+                <i className="fa-solid fa-chart-simple mr-3"></i>PlannerHub
               </Link>
             </li>
             <li className="text-blue-300">
-              <Link href="/login" onClick={() => setMenuOpen(false)}>
+              <Link href="/auth/sign-up" onClick={() => setMenuOpen(false)}>
                 <i className="fa-solid fa-user mr-3"></i>Login
               </Link>
             </li>
