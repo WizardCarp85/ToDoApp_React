@@ -1,30 +1,36 @@
 "use client";
 import Link from "next/link";
 import React, { use, useState } from "react";
-import {useCreateUserWithEmailAndPassword} from "react-firebase-hooks/auth"
-import {auth} from "@/app/firebase/config"
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "@/app/firebase/config";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-
-  const[createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-    try{
-        const res = await createUserWithEmailAndPassword(email, password);
-        console.log({res})
-        setEmail("");
-        setPassword("");
-    }
-    catch(e){
-        console.log({e})
+    try {
+      const res = await createUserWithEmailAndPassword(email, password);
+      console.log({ res });
+      setEmail("");
+      setPassword("");
+    } catch (e) {
+      console.log({ e });
     }
   };
   return (
-    <div className="signup flex flex-col items-center mt-[10em] justify-center">
+    <div className="signup flex flex-col items-center h-screen justify-center">
+      <Link
+        href="/home"
+        className="absolute top-4 left-4 md:top-8 md:left-6 text-blue-400 hover:underline text-sm md:text-base"
+      >
+        ← Back to Home
+      </Link>
+
       <h1 className="text-2xl md:text-4xl p-4 text-[#04A5FF] font-semibold tracking-wide md:pb-10">
         Join Pixel Planner Today🚀
       </h1>

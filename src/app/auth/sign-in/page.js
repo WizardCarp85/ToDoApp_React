@@ -12,21 +12,26 @@ const Signin = () => {
   const router = useRouter();
   const handleSignIn = async (e) => {
     e.preventDefault();
-    try{
-      const res = await signInWithEmailAndPassword(email,password);
-      console.log({res});
+    try {
+      const res = await signInWithEmailAndPassword(email, password);
+      console.log({ res });
       setEmail("");
       setPassword("");
       router.push("/dashboard");
-    }catch(err){
-      console.log(err)
+    } catch (err) {
+      console.log(err);
       alert("Invalid email or password. Please try again.");
     }
-    
   };
 
   return (
-    <div className="signup flex flex-col items-center mt-[10em] justify-center">
+    <div className="signup flex flex-col items-center h-screen justify-center">
+      <Link
+        href="/home"
+        className="absolute top-4 left-4 md:top-8 md:left-6 text-blue-400 hover:underline text-sm md:text-base"
+      >
+        ← Back to Home
+      </Link>
       <h1 className="text-4xl md:text-5xl p-4 text-[#04A5FF] font-semibold tracking-wide md:pb-10">
         Welcome Back👋
       </h1>
@@ -38,7 +43,7 @@ const Signin = () => {
           <input
             type="email"
             placeholder="Enter Your Email"
-            value = {email}
+            value={email}
             required
             className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
             onChange={(e) => setEmail(e.target.value)}
@@ -51,10 +56,10 @@ const Signin = () => {
           <input
             type="password"
             placeholder="Enter Your Password"
-            value = {password}
+            value={password}
             required
             className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
-            onChange={(e)=> setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button

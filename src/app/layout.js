@@ -1,6 +1,5 @@
-import Navbar from "@/components/Navbar/Navbar";
+import ClientWrapper from "@/components/ClientWrapper/ClientWrapper";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
 import {Poppins} from "next/font/google";
 
 const poppins = Poppins({
@@ -26,12 +25,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen flex flex-col">
-          <div className="h-[70px] md:h-24 bg-[#141414] rounded-b-lg"></div>
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer/>
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );
