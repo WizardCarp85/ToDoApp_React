@@ -35,6 +35,7 @@ const Signup = () => {
           <input
             type="email"
             placeholder="Enter Your Email"
+            value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
             className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
@@ -47,6 +48,7 @@ const Signup = () => {
           <input
             type="password"
             placeholder="Enter Your Password"
+            value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
             className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
@@ -64,7 +66,7 @@ const Signup = () => {
         Already have an account?{" "}
         <Link href="./sign-in" className="text-blue-500">
           Sign In
-        </Link>{" "}
+        </Link>
       </div>
     </div>
   );

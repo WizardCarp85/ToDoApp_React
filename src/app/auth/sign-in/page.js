@@ -1,8 +1,30 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "@/app/firebase/config";
+import { useRouter } from "next/navigation";
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const router = useRouter();
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    try{
+      const res = await signInWithEmailAndPassword(email,password);
+      console.log({res});
+      setEmail("");
+      setPassword("");
+      router.push("/dashboard");
+    }catch(err){
+      console.log(err)
+      alert("Invalid email or password. Please try again.");
+    }
+    
+  };
+
   return (
     <div className="signup flex flex-col items-center mt-[10em] justify-center">
       <h1 className="text-4xl md:text-5xl p-4 text-[#04A5FF] font-semibold tracking-wide md:pb-10">
@@ -13,23 +35,38 @@ const Signin = () => {
           <span>
             <i className="fa-solid fa-user pr-2"></i>
           </span>
-          <input type="email" placeholder="Enter Your Email" required className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"/>
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            value = {email}
+            required
+            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
         <div className="text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
           <span>
             <i className="fa-solid fa-key pr-2"></i>
           </span>
-          <input type="password" placeholder="Enter Your Password" required className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"/>
+          <input
+            type="password"
+            placeholder="Enter Your Password"
+            value = {password}
+            required
+            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
+            onChange={(e)=> setPassword(e.target.value)}
+          />
         </div>
         <button
           type="submit"
           className="bg-[#2B7FFF] rounded-lg py-1 text-white md:text-xl font-semibold tracking-wider"
+          onClick={handleSignIn}
         >
-          Sign Up
+          Sign In
         </button>
       </form>
       <div className="text-xs md:text-[0.8rem] pt-4">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href="./sign-up" className="text-blue-500">
           Sign Up
         </Link>{" "}
