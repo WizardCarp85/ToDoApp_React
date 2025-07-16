@@ -4,8 +4,12 @@ import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/app/firebase/config";
 
 const Home = () => {
+  const [user] = useAuthState(auth);
+
   useEffect(() => {
     AOS.init({ duration: 900, once: false });
   }, []);
@@ -59,7 +63,7 @@ const Home = () => {
   data-aos="zoom-in-up"
 >
   <h1>
-    <Link href="/create">Start Conquering Chaos 🚀</Link>
+    {user ? (<Link href="/create">Start Conquering Chaos 🚀</Link>):(<Link href="/auth/sign-up">Start Conquering Chaos 🚀</Link>)}
   </h1>
 </div>
 

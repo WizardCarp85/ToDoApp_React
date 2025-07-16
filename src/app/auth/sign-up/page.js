@@ -1,12 +1,13 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import {useCreateUserWithEmailAndPassword} from "react-firebase-hooks/auth"
 import {auth} from "@/app/firebase/config"
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const[createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
@@ -28,7 +29,7 @@ const Signup = () => {
         Join Pixel Planner Today🚀
       </h1>
       <form className="flex flex-col gap-4 w-[60%] md:w-[20%] text-blue-500">
-        <div className="text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
+        <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
           <span>
             <i className="fa-solid fa-user pr-2"></i>
           </span>
@@ -38,10 +39,10 @@ const Signup = () => {
             value={email}
             required
             onChange={(e) => setEmail(e.target.value)}
-            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
+            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
           />
         </div>
-        <div className="text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
+        <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
           <span>
             <i className="fa-solid fa-key pr-2"></i>
           </span>
@@ -51,7 +52,7 @@ const Signup = () => {
             value={password}
             required
             onChange={(e) => setPassword(e.target.value)}
-            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200"
+            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
           />
         </div>
         <button

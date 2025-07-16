@@ -2,9 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/app/firebase/config";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user] = useAuthState(auth);
+  const router = useRouter();
   return (
     <div className="flex flex-row justify-around tracking-wide">
       {/* Logo */}
@@ -21,7 +26,9 @@ const Navbar = () => {
             height={30}
             className="md:h-10 md:w-10"
           />
-          <span className="logo-text text-[2em] md:text-[2.8rem] pt-1">Pixel Planner</span>
+          <span className="logo-text text-[2em] md:text-[2.8rem] pt-1">
+            Pixel Planner
+          </span>
         </Link>
         {/* desktop navbar */}
         <div className="hidden md:flex md:gap-16 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-16 tracking-wider">
@@ -43,12 +50,21 @@ const Navbar = () => {
           >
             PlannerHub
           </Link>
-          <Link
-            href="/auth/sign-up"
-            className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200"
-          >
-            Login
-          </Link>
+          {user ? (
+            <button
+              className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer"
+              onClick={() => {auth.signOut(); router.push('/auth/sign-in')}}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/auth/sign-up"
+              className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer"
+            >
+              Login
+            </Link>
+          )}
         </div>
         {/* mobile navbar */}
         <button
@@ -82,9 +98,15 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="text-blue-300">
-              <Link href="/auth/sign-up" onClick={() => setMenuOpen(false)}>
-                <i className="fa-solid fa-user mr-3"></i>Login
-              </Link>
+              {user ? (
+                <button onClick={() => {setMenuOpen(false); auth.signOut(); router.push('/auth/sign-in')}}>
+                  <i className="fa-solid fa-user mr-3"></i>Logout
+                </button>
+              ) : (
+                <Link href="/auth/sign-up" onClick={() => setMenuOpen(false)}>
+                  <i className="fa-solid fa-user mr-3"></i>Login
+                </Link>
+              )}
             </li>
           </ul>
         </div>
