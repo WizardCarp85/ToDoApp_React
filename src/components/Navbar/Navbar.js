@@ -31,7 +31,7 @@ const Navbar = () => {
           </span>
         </Link>
         {/* desktop navbar */}
-        <div className="hidden md:flex md:gap-16 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-16 tracking-wider">
+        <div className="hidden md:flex md:gap-20 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-16 tracking-wider">
           <Link
             href="/home"
             className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
@@ -39,16 +39,10 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            href="/create"
+            href= {user ? "/dashboard" : "/auth/sign-in"}
             className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
           >
-            Create✨
-          </Link>
-          <Link
-            href="/dashboard"
-            className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
-          >
-            PlannerHub
+            PlannerHub✨
           </Link>
           {user ? (
             <button
@@ -88,13 +82,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="">
-              <Link href="/create" onClick={() => setMenuOpen(false)}>
-                <i className="fa-solid fa-square-plus mr-3"></i>Create
-              </Link>
-            </li>
-            <li className="">
-              <Link href="/dashboard" onClick={() => setMenuOpen(false)}>
-                <i className="fa-solid fa-chart-simple mr-3"></i>PlannerHub
+              <Link href={user ? "/dashboard" : "/auth/sign-in"} onClick={() => setMenuOpen(false)}>
+                <i className="fa-solid fa-chart-simple mr-3"></i>PlannerHub✨
               </Link>
             </li>
             <li className="text-blue-300">

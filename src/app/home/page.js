@@ -20,13 +20,13 @@ const Home = () => {
         className="heading flex items-center justify-center mt-[6em] mb-[2em] md:mt-[12em] md:mb-[5em] tracking-wide"
         data-aos="fade-up"
       >
-        <h1 className="heading-text text-3xl md:text-[2.5rem] font-semibold md:font-bold text-[#e2e2e2] font-['Playfair_Display']">
+        <h1 className="heading-text text-4xl md:text-[2.5rem] font-semibold md:font-bold text-[#e2e2e2] font-['Playfair_Display']">
           What&apos;s Pixel Planner?
         </h1>
       </div>
       {/* info */}
       <div
-        className="info flex flex-col items-center justify-center text-[#D1D5DB] mx-[3em] text-center gap-8 mb-[8em] text-md md:text-lg md:mx-[20em] md:gap-12"
+        className="info flex flex-col items-center justify-center text-[#D1D5DB] mx-[3em] text-center gap-8 mb-[8em] text-[0.9rem] md:text-lg md:mx-[20em] md:gap-12"
         data-aos="fade-up"
       >
         <p className="info-text">
@@ -48,7 +48,7 @@ const Home = () => {
         <h1 className="text-2xl md:text-4xl text-center md:mb-20 text-sky-500 font-bold font-['Playfair_Display']">
           ⚙️ Level Up With These Perks
         </h1>
-        <div className="my-12 mx-8 text-md md:text-lg text-center">
+        <div className="my-12 mx-8 text-[0.9rem] md:text-lg text-center">
           <ul className="space-y-3 md:space-y-5">
             <li>📅 Plan your missions.</li>
             <li>🎯 Complete your goals like a true champion.</li>
@@ -63,7 +63,7 @@ const Home = () => {
   data-aos="zoom-in-up"
 >
   <h1>
-    {user ? (<Link href="/create">Start Conquering Chaos 🚀</Link>):(<Link href="/auth/sign-up">Start Conquering Chaos 🚀</Link>)}
+    {user ? (<Link href="/dashboard">Start Conquering Chaos 🚀</Link>):(<Link href="/auth/sign-in">Start Conquering Chaos 🚀</Link>)}
   </h1>
 </div>
 
@@ -81,7 +81,7 @@ const Home = () => {
               &quot;Pixel Planner has transformed the way I organize my day.
               It&apos;s like having a personal sidekick!&quot;
             </p>
-            <h4 className="mt-2 text-md font-semibold">WizardCarp</h4>
+            <h4 className="mt-2 text-md font-semibold">Wizard</h4>
             <p className="text-xs text-gray-400">Software Engineer</p>
           </div>
         </div>

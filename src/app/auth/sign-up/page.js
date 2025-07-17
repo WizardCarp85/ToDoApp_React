@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
-import React, { use, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -22,8 +24,12 @@ const Signup = () => {
       console.log({ e });
     }
   };
+  useEffect(() => {
+    AOS.init({ duration: 900, once: false });
+  }, []);
+
   return (
-    <div className="signup flex flex-col items-center h-screen justify-center">
+    <div className="signup flex flex-col items-center h-screen justify-center" data-aos="fade-up">
       <Link
         href="/home"
         className="absolute top-4 left-4 md:top-8 md:left-6 text-blue-400 hover:underline text-sm md:text-base"
@@ -63,7 +69,7 @@ const Signup = () => {
         </div>
         <button
           type="submit"
-          className="bg-[#2B7FFF] rounded-lg py-1 text-white md:text-xl font-semibold tracking-wider"
+          className="bg-[#2B7FFF] rounded-lg py-1 text-white md:text-xl font-semibold tracking-wider cursor-pointer hover:bg-[#1A5BC9] transition-all duration-300"
           onClick={handleSignUp}
         >
           Sign Up
