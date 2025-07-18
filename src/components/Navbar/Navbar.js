@@ -53,7 +53,7 @@ const Navbar = () => {
             </button>
           ) : (
             <Link
-              href="/auth/sign-up"
+              href="/auth/sign-in"
               className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer"
             >
               Login
@@ -92,7 +92,7 @@ const Navbar = () => {
                   <i className="fa-solid fa-user mr-3"></i>Logout
                 </button>
               ) : (
-                <Link href="/auth/sign-up" onClick={() => setMenuOpen(false)}>
+                <Link href="/auth/sign-in" onClick={() => setMenuOpen(false)}>
                   <i className="fa-solid fa-user mr-3"></i>Login
                 </Link>
               )}
