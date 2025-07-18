@@ -5,10 +5,12 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const [createUserWithEmailAndPassword] =
     useCreateUserWithEmailAndPassword(auth);
@@ -20,8 +22,11 @@ const Signup = () => {
       console.log({ res });
       setEmail("");
       setPassword("");
+      alert("🎉 Signed up successfully! Please sign in.")
+      router.push("/auth/sign-in")
     } catch (e) {
       console.log({ e });
+      alert("Something is Wrong, Please try again")
     }
   };
   useEffect(() => {
