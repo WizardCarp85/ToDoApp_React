@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div className="flex flex-row justify-around tracking-wide">
       {/* Logo */}
-      <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-24 pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848] shadow-sm shadow-[#424242]">
+      <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-[5.3em] pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848] shadow-sm shadow-[#424242]">
         <Link
           href="/"
           className="flex items-center gap-2 font-semibold scale-[0.9]"
@@ -31,16 +31,16 @@ const Navbar = () => {
           </span>
         </Link>
         {/* desktop navbar */}
-        <div className="hidden md:flex md:gap-20 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-16 tracking-wider">
+        <div className="hidden md:flex md:gap-20 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-10 tracking-wider">
           <Link
             href="/home"
-            className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
+            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
           >
             Home
           </Link>
           <Link
             href= {user ? "/dashboard" : "/auth/sign-in"}
-            className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
+            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
           >
             PlannerHub✨
           </Link>
@@ -52,12 +52,17 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
+            <div className="flex gap-10">
             <Link
               href="/auth/sign-in"
-              className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer"
+              className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer tracking-wider"
             >
               Login
             </Link>
+            <Link href="auth/sign-up" className="text-blue-200 hover:text-blue-500 hover:scale-[1.1] transition-all duration-[400ms] ease-in-out tracking-wider">
+            Sign Up
+            </Link>
+            </div>
           )}
         </div>
         {/* mobile navbar */}
@@ -92,9 +97,14 @@ const Navbar = () => {
                   <i className="fa-solid fa-user mr-3"></i>Logout
                 </button>
               ) : (
-                <Link href="/auth/sign-in" onClick={() => setMenuOpen(false)}>
+                <div className="flex flex-col">
+                  <Link href="/auth/sign-in" onClick={() => setMenuOpen(false)}>
                   <i className="fa-solid fa-user mr-3"></i>Login
                 </Link>
+                <Link href="/auth/sign-in" onClick={() => setMenuOpen(false)}>
+                  <i className="fa-solid fa-user-plus mr-2"></i>Sign Up
+                </Link>
+                </div>
               )}
             </li>
           </ul>

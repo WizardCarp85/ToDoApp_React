@@ -9,9 +9,9 @@ export default function Home() {
     AOS.init({ duration: 900, once: false });
   }, []);
   return (
-    <>
+    <div className="flex flex-col items-center justify-center h-[90vh]">
       <div>
-        <h1 className="text-4xl md:text-[3.5rem] font-semibold md:font-bold text-[#a8cfff] font-['Playfair_Display'] text-center mt-60">
+        <h1 className="text-4xl md:text-[3.5rem] font-semibold md:font-bold text-[#a8cfff] font-['Playfair_Display'] text-center">
           Welcome to Pixel Planner!
         </h1>
       </div>
@@ -25,6 +25,6 @@ export default function Home() {
           </Link>
         </h1>
       </div>
-    </>
+    </div>
   );
 }

@@ -22,11 +22,11 @@ const Signup = () => {
       console.log({ res });
       setEmail("");
       setPassword("");
-      alert("🎉 Signed up successfully! Please sign in.")
-      router.push("/auth/sign-in")
+      alert("🎉 Signed up successfully! Please sign in.");
+      router.push("/auth/sign-in");
     } catch (e) {
       console.log({ e });
-      alert("Something is Wrong, Please try again")
+      alert("Something is Wrong, Please try again");
     }
   };
   useEffect(() => {
@@ -34,57 +34,61 @@ const Signup = () => {
   }, []);
 
   return (
-    <div className="signup flex flex-col items-center h-screen justify-center" data-aos="fade-up">
-      <Link
-        href="/home"
-        className="absolute top-4 left-4 md:top-8 md:left-6 text-blue-400 hover:underline text-sm md:text-base"
-      >
-        ← Back to Home
-      </Link>
-
-      <h1 className="text-2xl md:text-4xl p-4 text-[#04A5FF] font-semibold tracking-wide md:pb-10">
-        Join Pixel Planner Today🚀
-      </h1>
-      <form className="flex flex-col gap-4 w-[60%] md:w-[20%] text-blue-500">
-        <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
-          <span>
-            <i className="fa-solid fa-user pr-2"></i>
-          </span>
-          <input
-            type="email"
-            placeholder="Enter Your Email"
-            value={email}
-            required
-            onChange={(e) => setEmail(e.target.value)}
-            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
-          />
-        </div>
-        <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
-          <span>
-            <i className="fa-solid fa-key pr-2"></i>
-          </span>
-          <input
-            type="password"
-            placeholder="Enter Your Password"
-            value={password}
-            required
-            onChange={(e) => setPassword(e.target.value)}
-            className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-[#2B7FFF] rounded-lg py-1 text-white md:text-xl font-semibold tracking-wider cursor-pointer hover:bg-[#1A5BC9] transition-all duration-300"
-          onClick={handleSignUp}
+    <div className="signup flex flex-col items-center h-screen justify-center">
+      <div>
+        <Link
+          href="/home"
+          className="absolute top-4 left-4 md:top-8 md:left-6 text-blue-400 hover:underline transition-all duration-300 ease-linear text-sm md:text-base"
         >
-          Sign Up
-        </button>
-      </form>
-      <div className="text-xs md:text-[0.8rem] pt-4">
-        Already have an account?{" "}
-        <Link href="./sign-in" className="text-blue-500">
-          Sign In
+          ← Back to Home
         </Link>
+      </div>
+
+      <div data-aos="fade-up" className="w-full flex flex-col items-center">
+        <h1 className="text-2xl md:text-4xl p-4 text-[#04A5FF] font-semibold tracking-wide md:pb-10">
+          Join Pixel Planner Today🚀
+        </h1>
+        <form className="flex flex-col gap-4 w-[60%] md:w-[20%] text-blue-500">
+          <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
+            <span>
+              <i className="fa-solid fa-user pr-2"></i>
+            </span>
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              value={email}
+              required
+              onChange={(e) => setEmail(e.target.value)}
+              className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
+            />
+          </div>
+          <div className="flex flex-row text-sm md:text-[1.1rem] border-2 border-gray-500 p-2 rounded-lg w-full">
+            <span>
+              <i className="fa-solid fa-key pr-2"></i>
+            </span>
+            <input
+              type="password"
+              placeholder="Enter Your Password"
+              value={password}
+              required
+              onChange={(e) => setPassword(e.target.value)}
+              className="md:text-[0.9rem] focus:outline-none focus:ring-0 text-gray-200 w-full"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-[#2B7FFF] rounded-lg py-1 text-white md:text-xl font-semibold tracking-wider cursor-pointer hover:bg-[#1A5BC9] transition-all duration-300"
+            onClick={handleSignUp}
+          >
+            Sign Up
+          </button>
+        </form>
+        <div className="text-xs md:text-[0.8rem] pt-4">
+          Already have an account?{" "}
+          <Link href="./sign-in" className="text-blue-500">
+            Sign In
+          </Link>
+        </div>
       </div>
     </div>
   );
