@@ -34,19 +34,19 @@ const Navbar = () => {
         <div className="hidden md:flex md:gap-20 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-10 tracking-wider">
           <Link
             href="/home"
-            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
+            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 hover:translate-y-[-0.2em]"
           >
             Home
           </Link>
           <Link
             href= {user ? "/dashboard" : "/auth/sign-in"}
-            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500"
+            className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 hover:translate-y-[-0.2em]"
           >
             PlannerHub✨
           </Link>
           {user ? (
             <button
-              className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer"
+              className="hover:scale-[1.15] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer  hover:translate-y-[-0.2em]"
               onClick={() => {auth.signOut(); router.push('/auth/sign-in')}}
             >
               Logout
@@ -55,11 +55,11 @@ const Navbar = () => {
             <div className="flex gap-10">
             <Link
               href="/auth/sign-in"
-              className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer tracking-wider"
+              className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 text-blue-200 cursor-pointer tracking-wider hover:translate-y-[-0.2em]"
             >
               Login
             </Link>
-            <Link href="auth/sign-up" className="text-blue-200 hover:text-blue-500 hover:scale-[1.1] transition-all duration-[400ms] ease-in-out tracking-wider">
+            <Link href="auth/sign-up" className="text-blue-200 hover:text-blue-500 hover:scale-[1.1] transition-all duration-[400ms] ease-in-out tracking-wider hover:translate-y-[-0.2em] cursor-pointer">
             Sign Up
             </Link>
             </div>
