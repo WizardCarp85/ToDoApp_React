@@ -21,6 +21,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const auth = getAuth();
   const router = useRouter();
+  const [search,setSearch] = useState("");
 
   // checking for user signed in
   useEffect(() => {
@@ -78,6 +79,11 @@ const Dashboard = () => {
     await deleteDoc(doc(db, "tasks", id));
   };
 
+  // search tasks
+  const filterSearch = tasks.filter(task => 
+    task.text.toLowerCase().includes(search.toLowerCase())
+  );
+
   if (loading)
     return (
       <div className="flex justify-center mt-[18em] md:mt-[20em] h-screen">
@@ -88,10 +94,10 @@ const Dashboard = () => {
     );
 
   return (
-    <div className="dashboard flex flex-col md:flex-row items-center md:gap-6 md:mx-[2em] h-screen w-full">
+    <div className="dashboard flex flex-col md:flex-row items-center md:gap-6 md:mx-[2em] h-screen md:min-h-screen md:overflow-auto mb-24 md:mb-0">
       {/* heading */}
-      <div className="title flex flex-col items-center mt-10 md:border-r-4 md:border-gray-500 md:h-[100vh] pr-12">
-        <h1 className="text-[#1e90ff] md:text-4xl mb-4 text-2xl font-semibold tracking-wide drop-shadow-[1px_1px_1px_#3b82f6] md:mt-[1.5em] md:mb-[6em] w-full">
+      <div className="title flex flex-col items-center mt-10 md:mt-0 pr-12">
+        <h1 className="text-[#1e90ff] md:text-4xl mb-4 text-2xl font-semibold tracking-wide drop-shadow-[1px_1px_1px_#3b82f6] md:mb-[6em] w-full">
           PlannerHub
         </h1>
         <h4 className="hidden md:flex text-center md:text-xl text-xs p-2 text-blue-400 tracking-wide font-semibold border-4 rounded-2xl md:p-6 border-gray-600 shadow-md shadow-gray-500/20">
@@ -100,6 +106,7 @@ const Dashboard = () => {
             : "Drop your first task 📋"}
         </h4>
       </div>
+      <div className="md:border-r-4 md:border-gray-500 h-[150%]"></div>
       <div className="w-full flex flex-col md:h-full md:mt-[6em]">
         {/* creating task */}
         <div className="create my-6 md:my-8 w-[70%] md:w-[80%] mx-auto md:mx-4">
@@ -137,14 +144,17 @@ const Dashboard = () => {
               <input
               type="text"
               placeholder="Search tasks..."
+              onChange={(e)=>setSearch(e.target.value)}
               className="w-full focus:outline-none focus:ring-0"
               />
             </div>
           )}
+          {/* Sorting and Pagination */}
+
           {/* task list */}
           <div className="w-full border-2 border-gray-500 rounded-lg">
             <ul className="w-full tracking-wider">
-              {tasks.map((task, index) => (
+              {filterSearch.map((task, index) => (
                 <Task
                   key={index}
                   task={task}
