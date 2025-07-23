@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-[5.3em] pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848] shadow-sm shadow-[#424242]">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold scale-[0.7]"
+          className="flex items-center gap-2 font-semibold scale-[0.85] md:scale-[0.7]"
           onClick={() => setMenuOpen(false)}
         >
           <Image
