@@ -14,15 +14,20 @@ const Task = ({ task, toggleComplete, deleteTask }) => {
           className="md:mr-3 mr-2 focus:outline-none focus:ring-0"
           defaultChecked={task.completed}
         />
-        <p
-          onClick={() => toggleComplete(task)}
-          className={`w-full text-sm ${task.completed ? "line-through" : ""}`}
-        >
+        <p className={`w-full text-sm ${task.completed ? "line-through" : ""}`}>
           {task.text}
         </p>
-        <button onClick={() => deleteTask(task.id)}>
-          <i className="fa-solid fa-trash-can text-sm md:text-lg text-red-400 cursor-pointer hover:scale-125 transition-all duration-300 ease-in-out"></i>
-        </button>
+        <div className="flex flex-row md:w-[15vw]">
+          <p className="hidden md:flex text-[0.7rem] text-center text-gray-300 font-semibold">
+            {new Date(task.createdAt).toLocaleString("en-IN", {
+              dateStyle: "short",
+              timeStyle: "short",
+            })}
+          </p>
+          <button onClick={() => deleteTask(task.id)}>
+            <i className="fa-solid fa-trash-can text-sm md:text-lg md:ml-8 text-red-400 cursor-pointer hover:scale-125 transition-all duration-300 ease-in-out"></i>
+          </button>
+        </div>
       </div>
     </li>
   );

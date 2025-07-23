@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="logo fixed md:flex z-100 md:justify-between md:items-center top-0 bg-[#0F0F0F]/94 h-[70px] md:h-[5.3em] pt-1 pl-3 md:pl-2 flex justify-between w-full border-b-2 border-[#484848] shadow-sm shadow-[#424242]">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold scale-[0.9]"
+          className="flex items-center gap-2 font-semibold scale-[0.7]"
           onClick={() => setMenuOpen(false)}
         >
           <Image
@@ -31,7 +31,7 @@ const Navbar = () => {
           </span>
         </Link>
         {/* desktop navbar */}
-        <div className="hidden md:flex md:gap-20 text-[1.3rem] text-[#b0b0b0] font-semibold md:pr-10 tracking-wider">
+        <div className="hidden md:flex md:gap-20 text-[1.3rem] md:text-lg text-[#b0b0b0] font-semibold md:pr-10 tracking-wider">
           <Link
             href="/home"
             className="hover:scale-[1.1] transition-transform duration-[400ms] ease-in-out hover:text-blue-500 hover:translate-y-[-0.2em]"

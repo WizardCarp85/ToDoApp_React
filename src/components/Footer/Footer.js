@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer h-fit py-4 md:h-fit flex flex-col md:gap-40 text-center text-[#F5F5F5]. border-t-1 border-[#cbcbcb] text-[0.7rem] md:text-[0.9rem] md:py-4 md:flex-row md:justify-baseline">
         <Link
           href="/"
-          className="md:flex items-center gap-2 font-semibold scale-[0.8] hidden"
+          className="md:flex items-center gap-2 font-semibold scale-[0.7] hidden"
         >
           <Image
             src="/logo.png"
