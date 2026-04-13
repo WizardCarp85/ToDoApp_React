@@ -29,6 +29,7 @@ const Signup = () => {
       alert("Something is Wrong, Please try again");
     }
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     AOS.init({ duration: 900, once: false });
   }, []);

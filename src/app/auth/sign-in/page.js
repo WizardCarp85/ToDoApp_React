@@ -25,6 +25,7 @@ const Signin = () => {
       alert("Invalid email or password. Please try again.");
     }
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     AOS.init({ duration: 900, once: false });
   }, []);
